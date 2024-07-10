@@ -12,8 +12,8 @@ def connect_to_mysql():
         conn = mysql.connector.connect(
             host='localhost',
             database='imm_db_dev',
-            user='',
-            password=''
+            user='root',
+            password='root'
         )
         if conn.is_connected():
             print('Connected to MySQL database')
@@ -35,7 +35,7 @@ def generate_appointment_detail_report_pdf():
             appointments = cursor.fetchall()
 
             # Crear un documento PDF en orientación horizontal
-            pdf_filename = "appointment_report_horizontal.pdf"
+            pdf_filename = "appointment_detail_report.pdf"
             doc = SimpleDocTemplate(pdf_filename, pagesize=landscape(letter))
 
             # Crear una lista para contener los datos de las citas
